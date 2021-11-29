@@ -1,16 +1,10 @@
 const fs = require("fs");
 const path = require("path");
+const { getNotesFromFile } = require("../../../src/utils");
 
 // api/notes
 const getAllNotes = (req, res) => {
-  // read from json file
-  const notesJSON = fs.readFileSync(
-    path.resolve(__dirname, "../../../db/db.json"),
-    "utf-8"
-  );
-
-  // parse
-  const notes = JSON.parse(notesJSON);
+  const notes = getNotesFromFile();
   console.log(notes);
 
   // return [notes]
