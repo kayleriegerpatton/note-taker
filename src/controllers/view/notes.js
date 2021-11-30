@@ -1,5 +1,6 @@
 const path = require("path");
 
+// send notes.html file
 const renderNotes = (fileName) => (req, res) => {
   res.send("renderNotes function");
 

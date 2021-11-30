@@ -6,8 +6,8 @@ const PORT = 3010;
 
 app.use(express.static("public"));
 
-//
-app.use(express.json());
+// middleware
+app.use(express.json({ extended: true }));
 app.use(express.urlencoded({ extended: true }));
 
 app.use(routes);

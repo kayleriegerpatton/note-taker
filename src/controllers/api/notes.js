@@ -1,10 +1,11 @@
-const fs = require("fs");
-const path = require("path");
-const { getNotesFromFile } = require("../../../src/utils");
+// const fs = require("fs");
+// const path = require("path");
+const { v4: uuidv4 } = require("uuid");
+const { readNotesFromFile, writeNotesToFile } = require("../../../src/utils");
 
 // api/notes
 const getAllNotes = (req, res) => {
-  const notes = getNotesFromFile();
+  const notes = readNotesFromFile();
   console.log(notes);
 
   // return [notes]
@@ -12,25 +13,55 @@ const getAllNotes = (req, res) => {
 };
 
 const createNote = (req, res) => {
-  res.send("createNote function");
+  const newNotePayload = req.body;
+
   // validate post body
-  // create new note object
-  // use uuid library for id#
-  // read from json
-  // push
-  // write to json file
-  // consider moment.js for date on note
+  const validKeys = ["title", "text"];
+  const isValidKey = validKeys.every((key) =>
+    Object.keys(newNotePayload).includes(key)
+  );
+
+  if (isValidKey) {
+    // create new note object w/ uuid
+    const newNote = {
+      id: uuidv4(),
+      ...newNotePayload,
+    };
+    // read from json
+    const notes = readNotesFromFile();
+
+    // push
+    notes.push(newNote);
+
+    // write to json file
+    writeNotesToFile(JSON.stringify(notes));
+
+    // consider moment.js for date on note
+    return res.json(newNote);
+  }
+
+  return res.status(400).json({ message: "Invalid request entry." });
 };
 
 const deleteANote = (req, res) => {
-  res.send("deleteANote function");
-  // read from json
-  // check if exists
   // extract id from req
-  // const { id } = req.params;
-  //   return 404 error if doesn't exist
-  // remove note w/ filter
-  // write to json file
+  const { id } = req.params;
+
+  // read from json
+  const notes = readNotesFromFile();
+
+  // check if id exists
+  const note = notes.find((note) => {
+    return note.id === id;
+  });
+  if (note) {
+    // remove note w/ .filter
+    // write to json file
+    return res.send("deleteANote function");
+  } //   return error if id doesn't exist
+  return res.status(404).json({
+    message: `No note with ID ${id}`,
+  });
 };
 
 module.exports = { getAllNotes, createNote, deleteANote };
