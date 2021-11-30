@@ -2,11 +2,10 @@ const path = require("path");
 
 // send notes.html file
 const renderNotes = (fileName) => (req, res) => {
-  res.send("renderNotes function");
+  //   send file to page
+  const filePath = path.join(__dirname, `../../../public/${fileName}.html`);
 
-  // send file to page
-  //   const filePath = path.join(__dirname, `../../../public/${fileName}.html`);
-  //   res.sendFile(filePath);
+  res.sendFile(filePath);
 };
 
 module.exports = { renderNotes };
