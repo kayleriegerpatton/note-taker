@@ -1,7 +1,7 @@
 // const fs = require("fs");
 // const path = require("path");
 const { v4: uuidv4 } = require("uuid");
-const { readNotesFromFile, writeNotesToFile } = require("../../../src/utils");
+const { readNotesFromFile, writeNoteToFile } = require("../../../src/utils");
 
 // api/notes
 const getAllNotes = (req, res) => {
@@ -34,7 +34,7 @@ const createNote = (req, res) => {
     notes.push(newNote);
 
     // write to json file
-    writeNotesToFile(JSON.stringify(notes));
+    writeNoteToFile(JSON.stringify(notes));
 
     // consider moment.js for date on note
     return res.json(newNote);
@@ -51,14 +51,20 @@ const deleteANote = (req, res) => {
   const notes = readNotesFromFile();
 
   // check if id exists
-  const note = notes.find((note) => {
-    return note.id === id;
-  });
+  const note = notes.find((note) => note.id === id);
+
   if (note) {
     // remove note w/ .filter
+    const newNotes = notes.filter((note) => {
+      return note.id !== id;
+    });
+
     // write to json file
-    return res.send("deleteANote function");
-  } //   return error if id doesn't exist
+    writeNoteToFile(JSON.stringify(newNotes));
+
+    return res.json(newNotes);
+  }
+  //   return error if id doesn't exist
   return res.status(404).json({
     message: `No note with ID ${id}`,
   });

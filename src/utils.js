@@ -13,8 +13,8 @@ const readNotesFromFile = () => {
   return notes;
 };
 
-const writeNotesToFile = (data) => {
+const writeNoteToFile = (data) => {
   fs.writeFileSync(path.join(__dirname, "../db/db.json"), data);
 };
 
-module.exports = { readNotesFromFile, writeNotesToFile };
+module.exports = { readNotesFromFile, writeNoteToFile };
