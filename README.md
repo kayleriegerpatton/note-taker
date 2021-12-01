@@ -2,7 +2,7 @@
 
 ## Description
 
-Note-taking application using an Express.js back end to save and retrieve note data from a JSON file. Notes can be added, viewed, and deleted utilizing GET, POST, and DELETE requests, while the JSON data can be viewed via the api's GET path.
+Note-taking application using an Express.js back-end to save and retrieve note data from a JSON file. Notes can be added, viewed, and deleted utilizing GET, POST, and DELETE requests, while the JSON data can be viewed via the api's GET path.
 
 ## Links
 
@@ -10,7 +10,7 @@ Note-taking application using an Express.js back end to save and retrieve note d
 
 ## Table of Contents
 
-- [User Stories](#user-stories)
+- [User Story](#user-story)
 - [Technologies & Tools](#technologies-and-tools)
 - [Endpoints](#endpoints)
   - [/api](#/api)
