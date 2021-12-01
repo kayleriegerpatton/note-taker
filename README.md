@@ -2,7 +2,7 @@
 
 ## Description
 
-Note-taking application using an Express.js back end to save and retrieve note data from a JSON file.
+Note-taking application using an Express.js back end to save and retrieve note data from a JSON file. Notes can be added, viewed, and deleted utilizing GET, POST, and DELETE requests, while the JSON data can be viewed via the api's GET path.
 
 ## Links
 
@@ -17,7 +17,29 @@ Note-taking application using an Express.js back end to save and retrieve note d
 - [Contributing](#contributing)
 - [Screenshots](#screenshots)
 
-## User Stories
+## User Story
+
+GIVEN a note-taking application  
+WHEN a user opens the application  
+THEN they are presented with a landing page linking to their notes page
+
+WHEN they click "Get Started"  
+THEN they are presented with any existing notes listed on the left and fields to enter a new note
+
+WHEN the user enters their note text and title
+THEN a save icon appears and they can save their note
+
+WHEN they save their note  
+THEN the note appears in the left sidebar
+
+WHEN the user clicks a note in the sidebar  
+THEN it is presented in the page's main column
+
+WHEN a user clicks the plus sign icon  
+THEN they can enter another new note
+
+WHEN the user clicks the delete icon next to an existing note  
+THEN the note is deleted
 
 ## Technologies and Tools
 
@@ -29,10 +51,9 @@ Note-taking application using an Express.js back end to save and retrieve note d
 
 ### /api
 
-- GET /notes
+- GET /notes  
   Returns an array of all existing notes objects.
-
-Example response:
+  - Example response:
 
 ```json
 [
@@ -49,10 +70,9 @@ Example response:
 ]
 ```
 
-- POST /notes
+- POST /notes  
   Creates a new note object.
-
-POST body:
+  - POST body:
 
 ```json
 {
@@ -61,11 +81,11 @@ POST body:
 }
 ```
 
-- DELETE /notes/:id
+- DELETE /notes/:id  
   Deletes a note by id.
 
 ## Contributing
 
-To contribute to this project, please [email](mailto:) me.
+To contribute to this project, please [email](mailto:kayle.patton22@gmail.com) me.
 
 ## Screenshots
