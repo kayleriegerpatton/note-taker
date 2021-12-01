@@ -6,6 +6,7 @@ const {
 } = require("../../controllers/api/notes");
 
 const router = Router();
+
 // /api/notes/
 router.get("/", getAllNotes);
 
@@ -14,7 +15,5 @@ router.post("/", createNote);
 
 // /api/notes/:id
 router.delete("/:id", deleteANote);
-
-// router.put("/:id", updateNote);
 
 module.exports = router;

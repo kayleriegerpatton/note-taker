@@ -1,5 +1,3 @@
-// const fs = require("fs");
-// const path = require("path");
 const { v4: uuidv4 } = require("uuid");
 const { readNotesFromFile, writeNoteToFile } = require("../../../src/utils");
 
@@ -35,7 +33,6 @@ const createNote = (req, res) => {
     // write to json file
     writeNoteToFile(JSON.stringify(notes));
 
-    // consider moment.js for date on note
     return res.json(newNote);
   }
 
