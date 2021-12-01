@@ -89,3 +89,9 @@ THEN the note is deleted
 To contribute to this project, please [email](mailto:kayle.patton22@gmail.com) me.
 
 ## Screenshots
+
+Empty note field:
+![Empty note field](screenshots/new-note.png)
+
+Current note view:
+![Current note view](screenshots/current-note.png)
