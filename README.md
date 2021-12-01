@@ -90,6 +90,9 @@ To contribute to this project, please [email](mailto:kayle.patton22@gmail.com) m
 
 ## Screenshots
 
+Landing page:
+![Landing page](screenshots/landing-page.png)
+
 Empty note field:
 ![Empty note field](screenshots/new-note.png)
 
