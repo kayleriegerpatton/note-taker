@@ -6,7 +6,6 @@ const { readNotesFromFile, writeNoteToFile } = require("../../../src/utils");
 // api/notes
 const getAllNotes = (req, res) => {
   const notes = readNotesFromFile();
-  console.log(notes);
 
   // return [notes]
   res.json(notes);

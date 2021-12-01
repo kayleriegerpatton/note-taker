@@ -1,57 +1,71 @@
 # Note Taker
 
+## Description
+
 Note-taking application using an Express.js back end to save and retrieve note data from a JSON file.
 
-<!-- SAMPLE CONTENT -->
-<!-- # Project Title
+## Links
 
-# Links
+[Deployed app]() on Heroku
 
-- Deployed Heroku link
+## Table of Contents
 
-## Description
+- [User Stories](#user-stories)
+- [Technologies & Tools](#technologies-and-tools)
+- [Endpoints](#endpoints)
+  - [/api](#/api)
+- [Contributing](#contributing)
+- [Screenshots](#screenshots)
 
 ## User Stories
 
-## Tools/Technologies
+## Technologies and Tools
+
+- Node.js
+- Express.js
+- uuid package
 
 ## Endpoints
 
 ### /api
 
 - GET /notes
-  This will return an array of notes
+  Returns an array of all existing notes objects.
 
-See sample response:
+Example response:
 
 ```json
 [
   {
     "id": "4d2ca0f3-597d-488a-80c7-a8aad04c9b91",
-    "title": "Test Title",
-    "text": "Test text"
+    "title": "Groceries",
+    "text": "Bananas, oranges, milk."
   },
   {
     "id": "26d33b16-7277-45f1-b8ec-8acdd5b6fec7",
-    "title": "Test Title",
-    "text": "Test text"
+    "title": "Finish Homework",
+    "text": "Due December 5"
   }
 ]
 ```
 
 - POST /notes
-  This will create a new note
+  Creates a new note object.
 
 POST body:
 
 ```json
 {
-  "title": "yur title",
-  "text": "your text"
+  "title": "Haircut",
+  "text": "Sunday at 9:00AM."
 }
 ```
 
 - DELETE /notes/:id
-  This will delete a note by ID
+  Deletes a note by id.
 
-## Screenshots -->
+## Contributing
+
+To contribute to this project, please [email](mailto:) me.
+
+## Screenshots
