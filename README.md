@@ -6,7 +6,7 @@ Note-taking application using an Express.js back-end to save and retrieve note d
 
 ## Links
 
-[Deployed app]() on Heroku
+[Deployed app](https://blooming-sierra-30356.herokuapp.com/) on Heroku
 
 ## Table of Contents
 
