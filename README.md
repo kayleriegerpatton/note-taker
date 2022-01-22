@@ -1,21 +1,24 @@
 # Note Taker
 
+## Table of Contents
+
+- [Description](#description)
+  - [Link](#link)
+- [User Story](#user-story)
+- [Technologies & Tools](#technologies-and-tools)
+- [Endpoints](#endpoints)
+  - [api](#api)
+- [Contributing](#contributing)
+- [Screenshots](#screenshots)
+
 ## Description
 
 Note-taking application using an Express.js back-end to save and retrieve note data from a JSON file. Notes can be added, viewed, and deleted utilizing GET, POST, and DELETE requests, while the JSON data can be viewed via the api's GET path.
 
-## Links
+### Link
 
 [Deployed app](https://blooming-sierra-30356.herokuapp.com/) on Heroku
 
-## Table of Contents
-
-- [User Story](#user-story)
-- [Technologies & Tools](#technologies-and-tools)
-- [Endpoints](#endpoints)
-  - [/api](#/api)
-- [Contributing](#contributing)
-- [Screenshots](#screenshots)
 
 ## User Story
 
@@ -49,7 +52,7 @@ THEN the note is deleted
 
 ## Endpoints
 
-### /api
+### api
 
 - GET /notes  
   Returns an array of all existing notes objects.
